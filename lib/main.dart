@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Colors.deepPurpleAccent,
           selectionColor: Colors.deepPurpleAccent,
-          selectionHandleColor: Colors.deepPurpleAccent,
-          
+          selectionHandleColor: Colors.deepPurpleAccent,  
         ),
         scaffoldBackgroundColor: Colors.deepPurpleAccent,
       ),

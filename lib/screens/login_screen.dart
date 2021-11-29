@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobx_udemy_flutter/stores/login_store/login_store.dart';
 import 'package:mobx_udemy_flutter/widgets/custom_icon_button.dart';
 import 'package:mobx_udemy_flutter/widgets/custom_text_field.dart';
 
@@ -11,6 +12,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  LoginStore loginStore = LoginStore();
 
   @override
   Widget build(BuildContext context) {
@@ -31,21 +34,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     CustomTextField(
                       hint: 'E-mail',
-                      prefix: Icon(Icons.account_circle),
+                      prefix: const Icon(Icons.account_circle),
                       textInputType: TextInputType.emailAddress,
-                      onChanged: (email){
-
-                      },
+                      onChanged: loginStore.setEmail,
                       enabled: true,
                     ),
                     const SizedBox(height: 16,),
                     CustomTextField(
                       hint: 'Senha',
-                      prefix: Icon(Icons.lock),
+                      prefix: const Icon(Icons.lock),
                       obscure: true,
-                      onChanged: (pass){
-
-                      },
+                      onChanged: loginStore.setPassword,
                       enabled: true,
                       suffix: CustomIconButton(
                         radius: 32,
